@@ -1,5 +1,5 @@
 import React from "react";
-import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import { Routes, Route, HashRouter } from 'react-router-dom';
 import TopBar from "./components/topBar/TopBar";
 import Article from "./Pages/Article/Article";
 import Authentification from "./Pages/Authentification/Authentification";
@@ -17,7 +17,7 @@ function App() {
   return (
     <CurrentUserProvider>
       <CurrentUserChecker>
-        <BrowserRouter>
+        <HashRouter>
           <div className="App">
             <TopBar />
 
@@ -35,7 +35,7 @@ function App() {
               <Route path="/register" element={<Authentification matchPath='/register' />} />
             </Routes>
           </div>
-        </BrowserRouter>
+        </HashRouter>
       </CurrentUserChecker>
     </CurrentUserProvider>
   );
